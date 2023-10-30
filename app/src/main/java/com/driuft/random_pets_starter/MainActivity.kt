@@ -1,5 +1,6 @@
 package com.driuft.random_pets_starter
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         for(id in 0 until 20){
         client["https://pokeapi.co/api/v2/pokemon/${id}", object : JsonHttpResponseHandler() {
+            @SuppressLint("SuspiciousIndentation")
             override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON) {
                 Log.d("Dog Success", "$json")
 //                pokeImageURL = json.jsonObject.getJSONObject("sprites").getString("front_default")
